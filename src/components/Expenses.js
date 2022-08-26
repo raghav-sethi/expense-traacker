@@ -5,7 +5,18 @@ import ExpenseItem from "./ExpenseItem";
 export default function Expenses(props) {
   return (
     <div className="expenses">
-      <ExpenseItem
+      {props.expenses.map((expense) => (
+        <ExpenseItem
+          title={expense.title}
+          date={expense.date}
+          amount={expense.amount}
+        />
+      ))}
+    </div>
+  );
+}
+
+/* <ExpenseItem
         title={props.expenses[0].title}
         date={props.expenses[0].date}
         amount={props.expenses[0].amount}
@@ -24,7 +35,4 @@ export default function Expenses(props) {
         title={props.expenses[3].title}
         date={props.expenses[3].date}
         amount={props.expenses[3].amount}
-      />
-    </div>
-  );
-}
+      /> */

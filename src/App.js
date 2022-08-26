@@ -32,12 +32,3 @@ function App() {
 }
 
 export default App;
-
-/* {expenses.forEach((expense) => {
-        console.log(expense.title);
-        <ExpenseItem
-          title={expense.title}
-          date={expense.date}
-          amount={expense.amount}
-        />;
-      })} */
