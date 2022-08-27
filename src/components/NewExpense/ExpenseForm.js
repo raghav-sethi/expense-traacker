@@ -5,6 +5,7 @@ export default function ExpenseForm(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [collapseAddExpense, setCollapseAddExpense] = useState(true);
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
