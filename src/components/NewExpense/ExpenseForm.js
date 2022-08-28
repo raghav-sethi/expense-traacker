@@ -33,7 +33,16 @@ export default function ExpenseForm(props) {
     setEnteredDate("");
   };
 
-  return (
+  const filterPaneCollapseHandler = () => {
+    setCollapseAddExpense(true);
+  };
+  const filterPanePullOutHandler = () => {
+    setCollapseAddExpense(false);
+  };
+
+  return collapseAddExpense ? (
+    <button onClick={filterPanePullOutHandler}>Add New Expense</button>
+  ) : (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
@@ -66,6 +75,7 @@ export default function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={filterPaneCollapseHandler}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
