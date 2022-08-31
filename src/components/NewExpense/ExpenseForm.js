@@ -23,7 +23,7 @@ export default function ExpenseForm(props) {
     const expenseData = {
       title: enteredTitle,
       date: new Date(enteredDate),
-      amount: enteredAmount,
+      amount: +enteredAmount,
     };
 
     props.onSaveExpenseData(expenseData);
@@ -31,6 +31,8 @@ export default function ExpenseForm(props) {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+
+    setCollapseAddExpense(true);
   };
 
   const filterPaneCollapseHandler = () => {
@@ -75,7 +77,9 @@ export default function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button onClick={filterPaneCollapseHandler}>Cancel</button>
+        <button type="button" onClick={filterPaneCollapseHandler}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
